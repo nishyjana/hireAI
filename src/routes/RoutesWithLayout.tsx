@@ -2,7 +2,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import NavBar from "../ui/NavBar";
 
-const ScreensWithNavAndSideBar = ({ children }: { children: any }) => (
+const ScreensWithNavAndSideBar = ({ children }) => (
   <>
     <div className="container w-screen h-screen">
       <div className="flex flex-row w-screen">
