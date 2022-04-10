@@ -2,13 +2,25 @@ import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import * as BsIcons from "react-icons/bs";
 import { ABOUT, HELP, WELCOME } from "../constants/PathConstants";
+import { useState } from "react";
+import ProfileModal from "./modals/ProfileModal";
+import useOuterClick from "../util/ClickHandler";
 
 export default function NavBar() {
   const location = useLocation();
   const history = useHistory();
+
+  const [profileModalClicked, setProfileModalClicked] = useState(false);
+
   const onclickFunction = (props: any) => {
     return history.push(`${props}`);
   };
+
+  const handleOuterClick = () => {
+    setProfileModalClicked(false);
+  };
+
+  const innerRef = useOuterClick(handleOuterClick);
 
   return (
     <div className="flex w-full h-auto bg-black justify-between px-2">
@@ -59,9 +71,19 @@ export default function NavBar() {
           ></div>
         </div>
       </div>
-      <div className="flex my-auto text-white py-4 mr-5 w-full justify-end">
-        <BsIcons.BsPersonCircle className="h-7 w-7" />
+      <div
+        className="flex my-auto text-white py-4 mr-5 w-full justify-end"
+        ref={innerRef}
+      >
+        <BsIcons.BsPersonCircle
+          className="h-7 w-7"
+          role="button"
+          tabIndex={0}
+          onClick={() => setProfileModalClicked(!profileModalClicked)}
+          onKeyDown={() => setProfileModalClicked(!profileModalClicked)}
+        />
       </div>
+      <ProfileModal open={profileModalClicked} />
     </div>
   );
 }
