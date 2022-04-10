@@ -1,14 +1,14 @@
 import React from "react";
-import { Route, BrowserRouter, Switch} from "react-router-dom";
+import { BrowserRouter, Switch } from "react-router-dom";
 import Welcome from "./component/Welcome";
-import RoutesWithLayout from "./routes/RoutesWithLayout";
+import ProtectedRoutesWithLayout from "./routes/RoutesWithLayout";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <Switch>
-        <Route path="/" component={Welcome} />
+          <ProtectedRoutesWithLayout path="/" component={Welcome} />
         </Switch>
       </BrowserRouter>
     </div>
