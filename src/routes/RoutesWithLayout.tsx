@@ -1,17 +1,17 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import NavBar from "../UI/NavBar";
+import NavBar from "../ui/NavBar";
 
 const ScreensWithNavAndSideBar = ({ children }: { children: any }) => (
   <>
     <div className="container w-screen h-screen">
       <div className="flex flex-row w-screen">
-        <div className=" w-2/3 lg:w-3/4 xl:w-5/6">
+        <div className="w-full">
           <div className="fixed w-full z-50 bg-white">
             <NavBar />
           </div>
 
-          <div className="pl-6 pt-32 w-full">{children}</div>
+          <div className="pt-4- w-full">{children}</div>
         </div>
       </div>
     </div>

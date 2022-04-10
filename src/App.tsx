@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch } from "react-router-dom";
-import Welcome from "./component/Welcome";
+import Welcome from "./component/welcome/Welcome";
 import ProtectedRoutesWithLayout from "./routes/RoutesWithLayout";
 
 function App() {
