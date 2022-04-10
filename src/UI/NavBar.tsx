@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import * as BsIcons from "react-icons/bs";
 
 export default function NavBar() {
   const location = useLocation();
@@ -20,7 +21,7 @@ export default function NavBar() {
         <div className="flex my-auto text-white py-4">HOW IT WORKS</div>
       </div>
       <div className="flex my-auto text-white py-4 mr-5 w-full justify-end">
-        PROFILE
+        <BsIcons.BsPersonCircle className="h-7 w-7"/>
       </div>
     </div>
   );
