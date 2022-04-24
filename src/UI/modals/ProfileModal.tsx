@@ -35,6 +35,3 @@ export default function ProfileModal({ open }: Props) {
     </>
   ) : null;
 }
-function useOuterClick(handleOuterClick: () => void) {
-  throw new Error("Function not implemented.");
-}
