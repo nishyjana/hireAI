@@ -18,7 +18,7 @@ export default function UploadImage({
   imageFile,
 }: Props) {
   const [imageError, setImageError] = useState<string>("");
-  const [cropModalVisible, setCropModalVisible] = useState(false);
+  const [cropModalVisible, setCropModalVisible] = useState(true);
   const [zoom, setZoom] = useState(1);
   const newFileName = Date.now().toString();
 
@@ -26,12 +26,14 @@ export default function UploadImage({
   const [imageSrch, setImageSrc] = useState<string>("");
   const [isUploading, setIsUploading] = useState(false);
   const [imageLocation, setImageLocation] = useState("");
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const profilePic = "";
+  const profilePic =
+    "";
 
   const currentUser = {
-    profilePic: "sd",
+    profilePic:
+      "https://expertphotography.b-cdn.net/wp-content/uploads/2018/10/cool-profile-pictures-retouching-1.jpg",
   };
 
   useEffect(() => {
@@ -108,7 +110,7 @@ export default function UploadImage({
     } else if (isEdit && !profilePic && currentUser?.profilePic) {
       return (
         <>
-          <div className="w-44 h-44  rounded-full flex justify-center">
+          <div className="w-44 h-44  flex justify-center">
             <div className="text-center flex flex-col">
               <div className="m-auto">
                 {isUploading ? (
@@ -116,7 +118,7 @@ export default function UploadImage({
                 ) : (
                   <>
                     <img
-                      className=" object-contain rounded-full inset-0 bg-cover bg-center z-0"
+                      className="object-contain   rounded-full inset-0 bg-cover bg-center z-0"
                       src={currentUser?.profilePic}
                       alt={"profile pic"}
                     />
@@ -204,7 +206,7 @@ export default function UploadImage({
                 ) : (
                   <>
                     <div className="w-7 h-full text-white font-poppins text-4xl">
-                      {'defaultProfilePicValue'}
+                      {"defaultProfilePicValue"}
                     </div>
                   </>
                 )}
@@ -233,8 +235,8 @@ export default function UploadImage({
           aspectRatio={500 / 500}
         />
       )}
+
       <div className="flex flex-row">{handleProfilePic()}</div>
-      <div className="text-red-400 flex justify-center -ml-4">{imageError}</div>
     </div>
   );
 }

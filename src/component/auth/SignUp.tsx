@@ -10,22 +10,12 @@ export default function SignUp() {
     (image: any) => {
       return (
         <>
-          {image && (
-            <>
-              <div
-                role="presentation"
-                className="font-light text-red-400 text-sm underline cursor-pointer whitespace-nowrap mr-3"
-              >
-                Remove profile picture
-              </div>
-            </>
-          )}
           <label
-            className="cursor-pointer underline whitespace-nowrap"
+            className="cursor-pointer underline whitespace-nowrap flex"
             htmlFor={edit ? "profileImage" : null}
           >
-            <div className="font-light text-purple-500 text-sm">
-              Upload a profile picture
+            <div className="font-light bg-slate-600 rounded-3xl p-4 text-hireAI text-sm flex ml-12 hover:block">
+              Upload
             </div>
           </label>
           <input
@@ -59,13 +49,11 @@ export default function SignUp() {
       <div className="w-2/3 h-2/3 border-2 border-b-8 border-gray-100 flex rounded-3xl my-32">
         <div className="w-1/3  flex">
           <div className="m-auto">
-            {/* <UploadImage
-              isEdit={true}
-              imageFile={
-                "https://expertphotography.b-cdn.net/wp-content/uploads/2018/10/cool-profile-pictures-retouching-1.jpg"
-              }
-              setImageFile={setImageFileUrl}
-            /> */}
+            <img
+            className="w-44 h-44 object-cover rounded-full"
+              alt=""
+              src="https://expertphotography.b-cdn.net/wp-content/uploads/2018/10/cool-profile-pictures-retouching-1.jpg"
+            />
           </div>
         </div>
 
