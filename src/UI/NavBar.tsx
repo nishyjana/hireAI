@@ -23,7 +23,7 @@ export default function NavBar() {
   const innerRef = useOuterClick(handleOuterClick);
 
   return (
-    <div className="flex w-full h-auto bg-black justify-between px-2">
+    <div className="flex w-full h-auto bg-hireAI justify-between px-2">
       <div className="my-auto text-white py-5 w-full">LOGO</div>
       <div className="flex w-full justify-around">
         <div
