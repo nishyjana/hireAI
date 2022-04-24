@@ -6,7 +6,7 @@ import InputField from "../../ui/InputField";
 export default function LogIn() {
   const history = useHistory();
   return (
-    <div className="flex flex-col w-full items-center pt-28 3xl:pt-36">
+    <div className="flex flex-col w-full h-full items-center pt-28 3xl:pt-36">
       <div className="w-1/3 h-1/2 border-b-8 flex flex-col rounded-3xl border-gray-100 border-2 pt-20 pb-2  px-16 3xl:pt-36">
         <div className="mx-auto text-2xl font-bold -mt-10">LOGO</div>
         <div className="z-50">
