@@ -26,7 +26,10 @@ export default function LogIn() {
 
         <div className="mt-10 text-gray-500 flex mx-auto">
           <div className="mr-1">Don’t have an account?</div>
-          <div className="mr-1 text-hireAI" onClick={() => history?.push(SIGNUP)}>
+          <div
+            className="mr-1 text-hireAI"
+            onClick={() => history?.push(SIGNUP)}
+          >
             Sign up |
           </div>
           <div className="mr-1 text-hireAI">Forgot password?</div>
