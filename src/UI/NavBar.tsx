@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import * as BsIcons from 'react-icons/bs';
 import { ABOUT, HELP, WELCOME } from '../constants/PathConstants';
 import { useState } from 'react';
 import ProfileModal from './modals/ProfileModal';
 import useOuterClick from '../util/ClickHandler';
+import jwt from 'jwt-decode';
 
 export default function NavBar() {
     const location = useLocation();
     const history = useHistory();
+    const [user, setUser] = useState('');
+    const token = localStorage.getItem('token');
 
     const [profileModalClicked, setProfileModalClicked] = useState(false);
 
@@ -21,6 +24,13 @@ export default function NavBar() {
     };
 
     const innerRef = useOuterClick(handleOuterClick);
+
+    useEffect(() => {
+        if (token) {
+            const tokenDetails: any = jwt(token);
+            setUser(tokenDetails?.username);
+        }
+    }, [token]);
 
     return (
         <div className="flex w-full h-auto bg-hireAI justify-between px-2">
@@ -79,6 +89,17 @@ export default function NavBar() {
                     onClick={() => setProfileModalClicked(!profileModalClicked)}
                     onKeyDown={() => setProfileModalClicked(!profileModalClicked)}
                 />
+                {user && token ? (
+                    <div
+                        className="mx-2"
+                        role="button"
+                        tabIndex={0}
+                        onClick={() => setProfileModalClicked(!profileModalClicked)}
+                        onKeyDown={() => setProfileModalClicked(!profileModalClicked)}
+                    >
+                        {user}
+                    </div>
+                ) : null}
             </div>
             <ProfileModal open={profileModalClicked} />
         </div>
