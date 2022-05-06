@@ -76,11 +76,22 @@ export default function StartInterview() {
                         {fileName && completed ? (
                             <div className="w-full text-center px-10 py-10 m-auto my-20">
                                 <div className="font-serif fon text-hireAI text-md pt-4">
-                                <img src="images\pdf.svg" className="m-auto" alt="" /> {fileName}
+                                    <img src="images\pdf.svg" className="m-auto" alt="" />{' '}
+                                    {fileName}
                                 </div>
-                                <button className="bg-hireAI rounded-3xl w-1/3 p-2 my-4 text-white">
-                                    Proceed
-                                </button>
+                                <div className="flex  mx-auto">
+                                    <button
+                                        className="bg-hireAI rounded-3xl w-1/3 p-2 my-4 mr-2 ml-24 text-white"
+                                        onClick={() => {
+                                            window.location.reload();
+                                        }}
+                                    >
+                                        back
+                                    </button>
+                                    <button className="bg-hireAI rounded-3xl w-1/3 p-2 my-4 text-white">
+                                        Proceed
+                                    </button>
+                                </div>
                             </div>
                         ) : (
                             <div className="w-full text-center px-10 py-10 m-auto my-20">
@@ -97,9 +108,7 @@ export default function StartInterview() {
                                     className={`invisible focus:outline-none w-full pb-3 focus:border-blue-900`}
                                     id="uploadDocument"
                                     type="file"
-                                    accept={
-                                        'application/pdf'
-                                    }
+                                    accept={'application/pdf'}
                                     onChange={(e) => {
                                         handleFile(e.target.files[0]);
                                         setIsUploading(true);
