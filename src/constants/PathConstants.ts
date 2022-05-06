@@ -11,3 +11,5 @@ export const SIGNUP = "/signUp";
 export const PROFILE = "/profile";
 
 export const COMPANY_VIEW = "/company-view";
+
+export const START_INTERVIEW = "/start-interview";

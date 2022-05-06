@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { SIGNUP, WELCOME } from '../../constants/PathConstants';
+import { SIGNUP, START_INTERVIEW, WELCOME } from '../../constants/PathConstants';
 import { InputField } from '../../ui/InputField';
 import NormalLoader from '../../ui/NormalLoader';
 import Loader from '../../util/Loader';
@@ -30,7 +30,7 @@ export default function LogIn() {
             if (response.data.access_token) {
                 setTimeout(() => {
                     setLoader(false);
-                    history?.push(WELCOME);
+                    history?.push(START_INTERVIEW);
                 }, 2000);
             }
             localStorage.setItem('token', response.data.access_token);
