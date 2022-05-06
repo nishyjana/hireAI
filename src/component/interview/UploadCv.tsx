@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import jwt from 'jwt-decode';
+import Loader from '../../util/Loader';
 
 export default function StartInterview() {
     const [fileError, setFileError] = useState<string>('');
@@ -23,7 +24,6 @@ export default function StartInterview() {
                 if (file.size <= 400 * 1000000) {
                     setFile(file);
                     if (file) {
-                        setIsUploading(true);
                         fileUpload(file);
                     }
                 } else {
@@ -37,12 +37,15 @@ export default function StartInterview() {
         }
     };
 
-    const fileUpload = async (file) => {
+    useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
             const tokenDetails: any = jwt(token);
             setUser(tokenDetails?.username);
         }
+    }, []);
+
+    const fileUpload = async (file) => {
         const formData = new FormData();
         formData.append('cv', file);
         const config = {
@@ -72,7 +75,7 @@ export default function StartInterview() {
                     <div className="w-11/12 border-2 m-auto flex rounded-2xl border-gray-300 border-dashed">
                         {fileName && completed ? (
                             <div className="w-full text-center px-10 py-10 m-auto my-20">
-                                <div className="font-serif font-medium text-hireAI text-md pt-4">
+                                <div className="font-serif fon text-hireAI text-md pt-4">
                                     {fileName}
                                 </div>
                                 <button className="bg-hireAI rounded-3xl w-1/3 p-2 my-4 text-white">
@@ -87,7 +90,7 @@ export default function StartInterview() {
                                     htmlFor={'uploadDocument'}
                                 >
                                     <div className="font-light text-hireAI text-md pt-4 underline">
-                                        Upload document
+                                        {' Upload document'}
                                     </div>
                                 </label>
                                 <input
@@ -99,6 +102,7 @@ export default function StartInterview() {
                                     }
                                     onChange={(e) => {
                                         handleFile(e.target.files[0]);
+                                        setIsUploading(true);
                                         e.target.value = null;
                                     }}
                                 />
