@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { ABOUT, COMPANY_VIEW } from '../../constants/PathConstants';
+import { ABOUT, COMPANY_VIEW, SIGNIN } from '../../constants/PathConstants';
 import InputSearch from '../../ui/InputSearch';
 
 export default function Welcome() {
@@ -8,6 +8,7 @@ export default function Welcome() {
     const [url, setUrl] = useState('');
     const [error, setError] = useState(false);
     const [complete, setComplete] = useState(false);
+    const token = localStorage.getItem('token');
 
     useEffect(() => {
         if (complete && !url) {
@@ -19,12 +20,16 @@ export default function Welcome() {
 
     useEffect(() => {
         if (!error && complete && url) {
-            history.push({
-                pathname: COMPANY_VIEW,
-                state: { companyUrl: url },
-            });
+            if (token) {
+                history.push({
+                    pathname: COMPANY_VIEW,
+                    state: { companyUrl: url },
+                });
+            } else {
+                history.push(SIGNIN);
+            }
         }
-    }, [complete, error, history, url]);
+    }, [complete, error, history, token, url]);
 
     return (
         <div className="flex flex-col w-full items-center py-36 ">
