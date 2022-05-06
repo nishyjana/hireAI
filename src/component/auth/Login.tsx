@@ -2,13 +2,14 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { SIGNUP } from '../../constants/PathConstants';
-import InputField from '../../ui/InputField';
+import { SIGNUP, WELCOME } from '../../constants/PathConstants';
+import { InputField } from '../../ui/InputField';
+import NormalLoader from '../../ui/NormalLoader';
+import Loader from '../../util/Loader';
 
 export default function LogIn() {
     const history = useHistory();
-    const dispatch = useDispatch();
-
+    const [loader, setLoader] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -26,6 +27,12 @@ export default function LogIn() {
 
         try {
             const response = await axios.post(`http://127.0.0.1:8000/login`, params, config);
+            if (response.data.access_token) {
+                setTimeout(() => {
+                    setLoader(false);
+                    history?.push(WELCOME);
+                }, 2000);
+            }
             localStorage.setItem('token', response.data.access_token);
         } catch (error: any) {
             console.log(error);
@@ -38,22 +45,23 @@ export default function LogIn() {
                 <div className="mx-auto text-2xl font-bold -mt-10">LOGO</div>
                 <div className="z-30">
                     <InputField
-                        placeholder="Username"
-                        className="w-full bg-gray-200 my-10 py-3 px-5 rounded-3xl"
-                        onChange={(e) => setUsername(e)}
+                        placeHolder="Username"
+                        onChange={(e) => setUsername(e.target.value)}
                     />
                     <InputField
-                        placeholder="Password"
-                        className="w-full bg-gray-200 my-10 py-3 px-5  rounded-3xl"
-                        onChange={(e) => setPassword(e)}
+                        placeHolder="Password"
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
 
                 <button
                     className="mt-10 w-full bg-hireAI text-white py-3 rounded-3xl"
-                    onClick={() => loginHandler(username, password)}
+                    onClick={() => {
+                        setLoader(true);
+                        loginHandler(username, password);
+                    }}
                 >
-                    Sign in
+                    {loader ? <NormalLoader /> : 'Sign In'}
                 </button>
 
                 <div className="mt-10 text-gray-500 flex mx-auto">
