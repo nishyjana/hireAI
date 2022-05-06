@@ -76,7 +76,7 @@ export default function StartInterview() {
                         {fileName && completed ? (
                             <div className="w-full text-center px-10 py-10 m-auto my-20">
                                 <div className="font-serif fon text-hireAI text-md pt-4">
-                                    {fileName}
+                                <img src="images\pdf.svg" className="m-auto" alt="" /> {fileName}
                                 </div>
                                 <button className="bg-hireAI rounded-3xl w-1/3 p-2 my-4 text-white">
                                     Proceed
@@ -98,7 +98,7 @@ export default function StartInterview() {
                                     id="uploadDocument"
                                     type="file"
                                     accept={
-                                        'application/pdf,application/msword,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+                                        'application/pdf'
                                     }
                                     onChange={(e) => {
                                         handleFile(e.target.files[0]);
