@@ -1,6 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { START_RECORDING } from '../../constants/PathConstants';
+import { RECORDER, START_RECORDING } from '../../constants/PathConstants';
 
 export default function Question() {
     const history = useHistory();
@@ -17,7 +17,7 @@ export default function Question() {
                             <button
                                 className="bg-hireAI rounded-3xl w-1/3 my-20 p-2 text-sm text-white"
                                 onClick={() => {
-                                    history.push(START_RECORDING);
+                                    history.push(RECORDER);
                                 }}
                             >
                                 RECORD

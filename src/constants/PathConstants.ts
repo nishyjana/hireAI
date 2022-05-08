@@ -20,3 +20,7 @@ export const APPLICATION_FORM = '/application-form';
 
 export const QUESTION = '/question';
 
+export const RECORDER = '/recorder';
+
+export const THANKYOU = '/thanks';
+

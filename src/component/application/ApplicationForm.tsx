@@ -5,7 +5,6 @@ import { useHistory, useLocation } from 'react-router-dom';
 import jwt from 'jwt-decode';
 import { InputField } from '../../ui/InputField';
 import NormalLoader from '../../ui/NormalLoader';
-import { Formik } from 'formik';
 import { START_INTERVIEW } from '../../constants/PathConstants';
 
 export default function ApplicationForm() {
