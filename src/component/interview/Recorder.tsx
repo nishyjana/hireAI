@@ -44,7 +44,7 @@ export default function Recorder() {
                 'content-type': 'multipart/form-data',
             },
         };
-        console.log(formData);
+
         if (user && interviewId) {
             console.log(user, interviewId);
             const response = await axios.post(
@@ -74,10 +74,25 @@ export default function Recorder() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [upload, video]);
 
+    useEffect(() => {
+        if (confirm) {
+            window.scrollTo(0, document.body.scrollHeight);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [confirm]);
+
     return (
-        <div className="w-full h-screen">
+        <div className="w-full h-screen mt-6">
+            <VideoRecorder
+                className="mt-1"
+                onRecordingComplete={(videoBlob) => {
+                    setVideo(videoBlob);
+                    setShowConfirm(true);
+                }}
+            />
             {confirm ? (
-                <div className="w-full text-center p-2 m-auto my-20 z-50 ">
+                <div className="w-full text-center p-2 m-auto -mt-2  z-50 ">
+                    {window.scrollTo(0, document.body.scrollHeight)}
                     <button
                         className="bg-hireAI rounded-3xl w-1/12 my-2 text-center px-9 flex m-auto p-2 text-sm text-white"
                         onClick={() => {
@@ -88,15 +103,6 @@ export default function Recorder() {
                     </button>
                 </div>
             ) : null}
-            <VideoRecorder
-                onRecordingComplete={(videoBlob) => {
-                    // Do something with the video...
-
-                    console.log('videoBlob', videoBlob);
-                    setVideo(videoBlob);
-                    setShowConfirm(true);
-                }}
-            />
         </div>
     );
 }
