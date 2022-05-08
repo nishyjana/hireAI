@@ -14,4 +14,9 @@ export const COMPANY_VIEW = "/company-view";
 
 export const START_INTERVIEW = "/start-interview";
 
+export const START_RECORDING = "/start-recording";
+
 export const APPLICATION_FORM = '/application-form';
+
+export const QUESTION = '/question';
+

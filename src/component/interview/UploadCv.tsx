@@ -3,6 +3,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import jwt from 'jwt-decode';
 import Loader from '../../util/Loader';
+import { useHistory } from 'react-router-dom';
+import { START_RECORDING } from '../../constants/PathConstants';
 
 export default function StartInterview() {
     const [fileError, setFileError] = useState<string>('');
@@ -14,6 +16,7 @@ export default function StartInterview() {
     const [uploadStatus, setUploadStatus] = useState(null);
     const [showToolTip, setShowToolTip] = useState(false);
     const [uploadProcessObj, setUploadProcessObj] = useState(null);
+    const history = useHistory()
 
     const handleFile = (e) => {
         let file, doc;
@@ -88,7 +91,9 @@ export default function StartInterview() {
                                     >
                                         back
                                     </button>
-                                    <button className="bg-hireAI rounded-3xl w-1/3 p-2 my-4 text-white">
+                                    <button className="bg-hireAI rounded-3xl w-1/3 p-2 my-4 text-white" onClick={()=>{
+                                        history.push(START_RECORDING)
+                                    }}>
                                         Proceed
                                     </button>
                                 </div>

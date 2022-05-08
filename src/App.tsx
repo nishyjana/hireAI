@@ -6,6 +6,8 @@ import CompanyView from './component/application/CompanyView';
 import Login from './component/auth/Login';
 import SignUp from './component/auth/SignUp';
 import Help from './component/help/Help';
+import Question from './component/interview/Question';
+import StartRecording from './component/interview/StartRecording';
 import StartInterview from './component/interview/UploadCv';
 import Profile from './component/profile/Profile';
 import Welcome from './component/welcome/Welcome';
@@ -15,9 +17,11 @@ import {
     COMPANY_VIEW,
     HELP,
     PROFILE,
+    QUESTION,
     SIGNIN,
     SIGNUP,
     START_INTERVIEW,
+    START_RECORDING,
     WELCOME,
 } from './constants/PathConstants';
 import ProtectedRoutesWithLayout from './routes/RoutesWithLayout';
@@ -36,6 +40,9 @@ function App() {
                     <ProtectedRoutesWithLayout path={HELP} component={Help} />
                     <ProtectedRoutesWithLayout path={START_INTERVIEW} component={StartInterview} />
                     <ProtectedRoutesWithLayout path={APPLICATION_FORM} component={ApplicationForm} />
+                    <ProtectedRoutesWithLayout path={START_RECORDING} component={StartRecording} />
+                    <ProtectedRoutesWithLayout path={QUESTION} component={Question} />
+                    
                     
                 </Switch>
             </BrowserRouter>
