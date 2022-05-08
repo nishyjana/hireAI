@@ -19,21 +19,25 @@ export default function Recorder() {
         return blob;
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         const blob = new Blob([video], { type: 'video/mp4' });
 
         //we are giving a url for an image as second parameter below
         const fileTypeBLob = convertBlobToFile(blob, `${user}/interview`);
-        setVideoBlobFile(fileTypeBLob)
-    },[user, video])
+        setVideoBlobFile(fileTypeBLob);
+    }, [user, video]);
 
     const fileUpload = async (file) => {
         const interviewId = localStorage.getItem('interviewId');
         const formData = new FormData();
+        const date = new Date();
+        var files = new File([file], `${user}/interview/${date?.valueOf()}`, {
+            lastModified: date.valueOf(),
+            type: 'video/mp4',
+        });
 
-       
-        if (videoBlobFile) {
-            formData.append('video', videoBlobFile);
+        if (files) {
+            formData.append('video', files);
         }
         const config = {
             headers: {
@@ -49,7 +53,7 @@ export default function Recorder() {
                 config,
             );
             if (response) {
-                history.push(THANKYOU)
+                history.push(THANKYOU);
             }
         }
     };
