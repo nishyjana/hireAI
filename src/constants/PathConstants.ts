@@ -13,3 +13,5 @@ export const PROFILE = "/profile";
 export const COMPANY_VIEW = "/company-view";
 
 export const START_INTERVIEW = "/start-interview";
+
+export const APPLICATION_FORM = '/application-form';

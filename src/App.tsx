@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import About from './component/about/About';
+import ApplicationForm from './component/application/ApplicationForm';
 import CompanyView from './component/application/CompanyView';
 import Login from './component/auth/Login';
 import SignUp from './component/auth/SignUp';
@@ -10,6 +11,7 @@ import Profile from './component/profile/Profile';
 import Welcome from './component/welcome/Welcome';
 import {
     ABOUT,
+    APPLICATION_FORM,
     COMPANY_VIEW,
     HELP,
     PROFILE,
@@ -33,6 +35,7 @@ function App() {
                     <ProtectedRoutesWithLayout path={ABOUT} component={About} />
                     <ProtectedRoutesWithLayout path={HELP} component={Help} />
                     <ProtectedRoutesWithLayout path={START_INTERVIEW} component={StartInterview} />
+                    <ProtectedRoutesWithLayout path={APPLICATION_FORM} component={ApplicationForm} />
                     
                 </Switch>
             </BrowserRouter>

@@ -14,7 +14,7 @@ const SpinLoader = (props) => (
         {...props}
     >
         <g transform="translate(78 50)">
-            <circle r={6} fill="#8b5cf6">
+            <circle r={6} fill="#0A1128">
                 <animateTransform
                     attributeName="transform"
                     type="scale"
@@ -35,7 +35,7 @@ const SpinLoader = (props) => (
             </circle>
         </g>
         <g transform="rotate(45 -49.355 119.154)">
-            <circle r={6} fill="#8b5cf6" fillOpacity={0.875}>
+            <circle r={6} fill="#0A1128" fillOpacity={0.875}>
                 <animateTransform
                     attributeName="transform"
                     type="scale"
@@ -56,7 +56,7 @@ const SpinLoader = (props) => (
             </circle>
         </g>
         <g transform="rotate(90 -14 64)">
-            <circle r={6} fill="#8b5cf6" fillOpacity={0.75}>
+            <circle r={6} fill="#0A1128" fillOpacity={0.75}>
                 <animateTransform
                     attributeName="transform"
                     type="scale"
@@ -77,7 +77,7 @@ const SpinLoader = (props) => (
             </circle>
         </g>
         <g transform="rotate(135 .645 41.154)">
-            <circle r={6} fill="#8b5cf6" fillOpacity={0.625}>
+            <circle r={6} fill="#0A1128" fillOpacity={0.625}>
                 <animateTransform
                     attributeName="transform"
                     type="scale"
@@ -98,7 +98,7 @@ const SpinLoader = (props) => (
             </circle>
         </g>
         <g transform="rotate(180 11 25)">
-            <circle r={6} fill="#8b5cf6" fillOpacity={0.5}>
+            <circle r={6} fill="#0A1128" fillOpacity={0.5}>
                 <animateTransform
                     attributeName="transform"
                     type="scale"
@@ -119,7 +119,7 @@ const SpinLoader = (props) => (
             </circle>
         </g>
         <g transform="rotate(-135 21.355 8.846)">
-            <circle r={6} fill="#8b5cf6" fillOpacity={0.375}>
+            <circle r={6} fill="#0A1128" fillOpacity={0.375}>
                 <animateTransform
                     attributeName="transform"
                     type="scale"
@@ -140,7 +140,7 @@ const SpinLoader = (props) => (
             </circle>
         </g>
         <g transform="rotate(-90 36 -14)">
-            <circle r={6} fill="#8b5cf6" fillOpacity={0.25}>
+            <circle r={6} fill="#0A1128" fillOpacity={0.25}>
                 <animateTransform
                     attributeName="transform"
                     type="scale"
@@ -161,7 +161,7 @@ const SpinLoader = (props) => (
             </circle>
         </g>
         <g transform="rotate(-45 71.355 -69.154)">
-            <circle r={6} fill="#8b5cf6" fillOpacity={0.125}>
+            <circle r={6} fill="#0A1128" fillOpacity={0.125}>
                 <animateTransform
                     attributeName="transform"
                     type="scale"

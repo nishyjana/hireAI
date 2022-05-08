@@ -19,13 +19,26 @@ export default function SignUp() {
     const [contactNumber, setContactNumber] = useState('');
     const [loader, setLoader] = useState(false);
 
-    const registerHandler = async (username, password, email) => {
+    const registerHandler = async (
+        username,
+        password,
+        email,
+        firstName,
+        lastName,
+        university,
+        contactNumber,
+        degreeProgram,
+    ) => {
         const params = new URLSearchParams();
 
         params.append('username', username);
         params.append('email', email);
         params.append('password', password);
-        params.append('position', 'Software Engineer');
+        params.append('firstname', firstName);
+        params.append('lastname', lastName);
+        params.append('university', university);
+        params.append('contact_number', contactNumber);
+        params.append('degree_programme', degreeProgram);
 
         const config = {
             headers: {
@@ -51,17 +64,17 @@ export default function SignUp() {
             <div className="w-1/2 border-2 border-b-4 border-gray-100 m-auto flex flex-col rounded-xl">
                 <div className="m-auto text-lg">Logo</div>
                 <div className="z-30 p-10 grid grid-rows-4 grid-flow-col gap-1">
-                    <InputField placeHolder="First name" onChange={(e) => setFirstName(e)} />
+                    <InputField placeHolder="First name" onChange={(e) => setFirstName(e.target.value)} />
                     <InputField placeHolder="Email" onChange={(e) => setEmail(e.target.value)} />
-                    <InputField placeHolder="University" onChange={(e) => setUniversity(e)} />
-                    <InputField placeHolder="Last name" onChange={(e) => setLastName(e)} />
+                    <InputField placeHolder="University" onChange={(e) => setUniversity(e.target.value)} />
+                    <InputField placeHolder="Last name" onChange={(e) => setLastName(e.target.value)} />
                     <InputField
                         placeHolder="Contact number"
-                        onChange={(e) => setContactNumber(e)}
+                        onChange={(e) => setContactNumber(e.target.value)}
                     />
                     <InputField
                         placeHolder="Degree program"
-                        onChange={(e) => setDegreeProgram(e)}
+                        onChange={(e) => setDegreeProgram(e.target.value)}
                     />
                     <InputField
                         placeHolder="Username"
@@ -76,7 +89,16 @@ export default function SignUp() {
                     className="mt-3 w-1/2 m-auto my-10 bg-hireAI text-white py-3 rounded-3xl"
                     onClick={() => {
                         setLoader(true);
-                        registerHandler(username, password, email);
+                        registerHandler(
+                            username,
+                            password,
+                            email,
+                            firstName,
+                            lastName,
+                            university,
+                            contactNumber,
+                            degreeProgram,
+                        );
                     }}
                 >
                     {loader ? <NormalLoader /> : 'Sign Up'}
