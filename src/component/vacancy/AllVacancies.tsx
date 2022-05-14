@@ -8,7 +8,7 @@ export default function AllVacancies() {
                     Create vacancy +
                 </div>
             </div>
-            <div className="flex flex-col m-auto px-20 py-10 w-1/2 border-2 border-b-8 rounded-2xl border-gray-300 my-2">
+            <div className="flex flex-col m-auto px-20 py-10 w-1/2 border-2 border-b-8 rounded-4xl border-gray-300 my-2">
                 <div className="font-bold mb-1">Sales Intern - Batch 0049 </div>
                 <div className="text-sm mb-8">Deadline: 3rd March 2022</div>
                 <div>
@@ -21,7 +21,7 @@ export default function AllVacancies() {
                 </div>
             </div>
 
-            <div className="flex flex-col m-auto px-20 py-10 w-1/2 border-2 border-b-8 rounded-2xl border-gray-300 my-2">
+            <div className="flex flex-col m-auto px-20 py-10 w-1/2 border-2 border-b-8 rounded-4xl border-gray-300 my-2">
                 <div className="font-bold mb-1">Sales Intern - Batch 0049 </div>
                 <div className="text-sm mb-8">Deadline: 3rd March 2022</div>
                 <div>
@@ -34,7 +34,7 @@ export default function AllVacancies() {
                 </div>
             </div>
 
-            <div className="flex flex-col m-auto px-20 py-10 w-1/2 border-2 border-b-8 rounded-2xl border-gray-300 my-2">
+            <div className="flex flex-col m-auto px-20 py-10 w-1/2 border-2 border-b-8 rounded-4xl border-gray-300 my-2">
                 <div className="font-bold mb-1">Sales Intern - Batch 0049 </div>
                 <div className="text-sm mb-8">Deadline: 3rd March 2022</div>
                 <div>
