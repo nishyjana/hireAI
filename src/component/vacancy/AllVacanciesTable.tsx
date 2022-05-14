@@ -5,16 +5,39 @@ export default function AllVacanciesTable() {
     const data = React.useMemo(
         () => [
             {
-                col1: 'Hello',
-                col2: 'World',
+                col1: '01',
+                col2: 'Lorem Ipsum',
+                col3: '02nd Feb 2022',
+                col4: 'Lorem-Ipsum.pdf',
+                col5: '90%',
             },
             {
-                col1: 'react-table',
-                col2: 'rocks',
+                col1: '01',
+                col2: 'Lorem Ipsum',
+                col3: '02nd Feb 2022',
+                col4: 'Lorem-Ipsum.pdf',
+                col5: '90%',
             },
             {
-                col1: 'whatever',
-                col2: 'you want',
+                col1: '01',
+                col2: 'Lorem Ipsum',
+                col3: '02nd Feb 2022',
+                col4: 'Lorem-Ipsum.pdf',
+                col5: '90%',
+            },
+            {
+                col1: '01',
+                col2: 'Lorem Ipsum',
+                col3: '02nd Feb 2022',
+                col4: 'Lorem-Ipsum.pdf',
+                col5: '90%',
+            },
+            {
+                col1: '01',
+                col2: 'Lorem Ipsum',
+                col3: '02nd Feb 2022',
+                col4: 'Lorem-Ipsum.pdf',
+                col5: '90%',
             },
         ],
         [],
@@ -22,19 +45,37 @@ export default function AllVacanciesTable() {
     const columns = React.useMemo(
         () => [
             {
-                Header: 'Column 1',
+                Header: 'Id',
                 accessor: 'col1', // accessor is the "key" in the data
             },
             {
-                Header: 'Column 2',
+                Header: 'Name',
                 accessor: 'col2',
+            },
+            {
+                Header: 'Date & time',
+                accessor: 'col3',
+            },
+            {
+                Header: 'Cv',
+                accessor: 'col4',
+            },
+            {
+                Header: 'Name',
+                accessor: 'col5',
+            },
+            {
+                Header: 'Action',
+                accessor: 'action',
             },
         ],
         [],
     );
     return (
-        <div className='py-2 border-2 rounded-2xl border-gray-200'>
-            <DataTable columns={columns} data={data} />
+        <div className="flex m-auto py-32 px-10 w-full mt-20">
+            <div className="p-3 border-2 rounded-4xl border-gray-200 w-full">
+                <DataTable columns={columns} data={data} />
+            </div>
         </div>
     );
 }

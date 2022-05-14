@@ -83,10 +83,10 @@ const DataTable = ({
     }, [selectedFlatRows]);
 
     return (
-        <section className="h-full">
+        <section className="h-full ">
             <div className="justify-between w-full items-end ">
                 <table {...getTableProps()} className="w-full min-w-max">
-                    <thead className="bg-gray-50  min-w-max">
+                    <thead className=" rounded-4xl  min-w-max">
                         {headerGroups.map((headerGroup: any, index) => (
                             <tr
                                 key={index}
@@ -98,7 +98,7 @@ const DataTable = ({
                                 {headerGroup.headers.map((column, i) => (
                                     <th
                                         {...column.getHeaderProps()}
-                                        className={`py-4 px-3 text-left text-sm text-gray-500 font-poppins min-w-max ${
+                                        className={`py-4 px-3 text-left text-sm text-gray-500  font-poppins min-w-max ${
                                             column.id === 'unitPrice' ? 'text-right' : 'text-left'
                                         }`}
                                         key={i}
@@ -121,7 +121,7 @@ const DataTable = ({
                                                     role="presentation"
                                                     key={j}
                                                     {...cell.getCellProps()}
-                                                    className={`p-3 border-b-2 border-gray-100  text-gray-500  font-poppins ${
+                                                    className={`p-3 text-gray-500   font-poppins ${
                                                         cell.column.id === 'actionColumn' ||
                                                         cell.column.id === 'itemName'
                                                             ? 'text-start'
