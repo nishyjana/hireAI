@@ -72,7 +72,11 @@ export default function AllVacanciesTable() {
         [],
     );
     return (
-        <div className="flex m-auto py-32 px-10 w-full mt-20">
+        <div className="flex flex-col m-auto py-32 px-10 w-full">
+            <div className="flex justify-between my-10">
+                <div className="font-medium">Sales Intern: Batch 0049 </div>
+                <div className="font-medium">Deadline: 23rd March 2022</div>
+            </div>
             <div className="p-3 border-2 rounded-4xl border-gray-200 w-full">
                 <DataTable columns={columns} data={data} />
             </div>
