@@ -13,9 +13,11 @@ import StartRecording from './component/interview/StartRecording';
 import ThankYou from './component/interview/ThankYou';
 import StartInterview from './component/interview/UploadCv';
 import Profile from './component/profile/Profile';
+import AllVacancies from './component/vacancy/AllVacancies';
 import Welcome from './component/welcome/Welcome';
 import {
     ABOUT,
+    ALL_VACANCY,
     APPLICATION_FORM,
     COMPANY_VIEW,
     DASHBOARD,
@@ -51,7 +53,9 @@ function App() {
                     <ProtectedRoutesWithLayout path={QUESTION} component={Question} />
                     <ProtectedRoutesWithLayout path={RECORDER} component={Recorder} />
                     <ProtectedRoutesWithLayout path={THANKYOU} component={ThankYou} />
+
                     <AdminProtectedRoutesWithLayout path={DASHBOARD} component={AdminDashBoard} />
+                    <AdminProtectedRoutesWithLayout path={ALL_VACANCY} component={AllVacancies} />
                     
                     
                 </Switch>
