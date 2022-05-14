@@ -34,7 +34,7 @@ export default function NavBar() {
 
     return (
         <div className="flex w-full h-auto bg-hireAI justify-between px-2">
-            <div className="my-auto text-white py-5 w-full">LOGO</div>
+            <div className="my-auto text-white py-5 w-full font-bold">HIRE AI</div>
             <div className="flex w-full justify-around">
                 <div
                     className={`flex flex-col my-auto text-white py-4`}

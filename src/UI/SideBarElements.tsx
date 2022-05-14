@@ -12,6 +12,7 @@ export default function SideBarElements() {
 
     return (
         <div className="pt-20">
+            <img src="images\logo.svg" className="w-auto m-16 -mt-10 mb-20" alt="" />
             <div
                 className={`mb-3 py-2 mt-7 hover:bg-gray-400 w-full ${
                     pathSelected === DASHBOARD ? null : null

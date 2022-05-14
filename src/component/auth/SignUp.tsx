@@ -62,7 +62,7 @@ export default function SignUp() {
     return (
         <div className="flex p-40">
             <div className="w-1/2 border-2 border-b-4 border-gray-100 m-auto flex flex-col rounded-xl">
-                <div className="m-auto text-lg">Logo</div>
+            <img src="images\whitelogo.svg" className=" mx-auto w-48 h-10 mt-2 mb-20" alt="" />
                 <div className="z-30 p-10 grid grid-rows-4 grid-flow-col gap-1">
                     <InputField placeHolder="First name" onChange={(e) => setFirstName(e.target.value)} />
                     <InputField placeHolder="Email" onChange={(e) => setEmail(e.target.value)} />

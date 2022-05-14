@@ -48,7 +48,11 @@ export default function LogIn() {
     return (
         <div className="flex flex-col w-full h-full items-center pt-28 3xl:pt-36">
             <div className="w-1/3 h-1/2 border-b-8 flex flex-col rounded-3xl border-gray-100 border-2 pt-20 pb-2  px-16 3xl:pt-36">
-                <div className="mx-auto text-2xl font-bold -mt-10">LOGO</div>
+                <img
+                    src="images\whitelogo.svg"
+                    className=" mx-auto w-48 h-10  -mt-10 mb-20"
+                    alt=""
+                />
                 <div className="z-30">
                     <InputField
                         placeHolder="Username"
@@ -59,7 +63,6 @@ export default function LogIn() {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
-
                 <button
                     className="mt-10 w-full bg-hireAI text-white py-3 rounded-3xl"
                     onClick={() => {
@@ -69,7 +72,6 @@ export default function LogIn() {
                 >
                     {loader ? <NormalLoader /> : 'Sign In'}
                 </button>
-
                 <div className="mt-10 text-gray-500 flex mx-auto">
                     <div className="mr-1">Don’t have an account?</div>
                     <div className="mr-1 text-hireAI" onClick={() => history?.push(SIGNUP)}>

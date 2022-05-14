@@ -7,7 +7,8 @@ export default function Sidebar() {
     const history = useHistory();
     return (
         <div className="w-full bg-hireAI h-screen text-white">
-            <div className="p-10 pb-2 ">LOGO</div>
+            {/* <div className="p-10 pb-2 text-center text-2xl ">HIRE AI</div> */}
+
             <SideBarElements />
             <div
                 className={`mb-3 py-2 ml-2 w-full mt-32`}
