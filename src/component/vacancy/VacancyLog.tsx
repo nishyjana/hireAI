@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import ProgressBars from '../../util/ProgressBar';
 import Profile from '../profile/Profile';
 import FacialScore from './FacialScore';
+import FinalScore from './FinalScore';
+import Sentiment from './Sentiment';
 
 export default function VacancyLog() {
     const [component, setComponent] = useState('Personal Information');
@@ -10,7 +11,9 @@ export default function VacancyLog() {
             <div className="m-auto flex flex-col border-2 border-gray-200  bg-hireAI rounded-t-4xl w-3/4 px-1 py-3 ">
                 <div className="flex justify-between py-3">
                     <div
-                        className="px-3 text-white"
+                        className={`px-3 text-white ${
+                            component === 'Personal Information' ? 'underline' : null
+                        }`}
                         role="button"
                         tabIndex={0}
                         onClick={() => {
@@ -20,7 +23,9 @@ export default function VacancyLog() {
                         Personal Information
                     </div>
                     <div
-                        className="px-3 text-white"
+                        className={`px-3 text-white ${
+                            component === 'Facial Score' ? 'underline' : null
+                        }`}
                         role="button"
                         tabIndex={0}
                         onClick={() => {
@@ -30,17 +35,21 @@ export default function VacancyLog() {
                         Facial Score
                     </div>
                     <div
-                        className="px-3 text-white"
+                        className={`px-3 text-white ${
+                            component === 'Sentiment Score' ? 'underline' : null
+                        }`}
                         role="button"
                         tabIndex={0}
                         onClick={() => {
-                            setComponent(' Sentiment Score');
+                            setComponent('Sentiment Score');
                         }}
                     >
                         Sentiment Score
                     </div>
                     <div
-                        className="px-3 text-white"
+                        className={`px-3 text-white ${
+                            component === 'Final Score' ? 'underline' : null
+                        }`}
                         role="button"
                         tabIndex={0}
                         onClick={() => {
@@ -56,6 +65,10 @@ export default function VacancyLog() {
                     <Profile />
                 ) : component === 'Facial Score' ? (
                     <FacialScore />
+                ) : component === 'Sentiment Score' ? (
+                    <Sentiment />
+                ) : component === 'Final Score' ? (
+                    <FinalScore />
                 ) : null}
             </div>
         </div>
