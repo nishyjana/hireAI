@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch } from 'react-router-dom';
 import About from './component/about/About';
+import AdminDashBoard from './component/adminDashboard/AdminDashBoard';
 import ApplicationForm from './component/application/ApplicationForm';
 import CompanyView from './component/application/CompanyView';
 import Login from './component/auth/Login';
@@ -17,6 +18,7 @@ import {
     ABOUT,
     APPLICATION_FORM,
     COMPANY_VIEW,
+    DASHBOARD,
     HELP,
     PROFILE,
     QUESTION,
@@ -28,6 +30,7 @@ import {
     THANKYOU,
     WELCOME,
 } from './constants/PathConstants';
+import AdminProtectedRoutesWithLayout from './routes/AdminRoutesWithLayout';
 import ProtectedRoutesWithLayout from './routes/RoutesWithLayout';
 
 function App() {
@@ -48,6 +51,7 @@ function App() {
                     <ProtectedRoutesWithLayout path={QUESTION} component={Question} />
                     <ProtectedRoutesWithLayout path={RECORDER} component={Recorder} />
                     <ProtectedRoutesWithLayout path={THANKYOU} component={ThankYou} />
+                    <AdminProtectedRoutesWithLayout path={DASHBOARD} component={AdminDashBoard} />
                     
                     
                 </Switch>

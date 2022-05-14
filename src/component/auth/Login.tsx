@@ -1,18 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { SIGNUP, START_INTERVIEW, WELCOME } from '../../constants/PathConstants';
+import { DASHBOARD, SIGNUP, WELCOME } from '../../constants/PathConstants';
 import { InputField } from '../../ui/InputField';
 import NormalLoader from '../../ui/NormalLoader';
-import Loader from '../../util/Loader';
+import jwt from 'jwt-decode';
 
 export default function LogIn() {
     const history = useHistory();
     const [loader, setLoader] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-
     const loginHandler = async (username, password) => {
         const params = new URLSearchParams();
 
@@ -29,8 +28,15 @@ export default function LogIn() {
             const response = await axios.post(`http://127.0.0.1:8000/login`, params, config);
             if (response.data.access_token) {
                 setTimeout(() => {
-                    setLoader(false);
-                    history?.push(WELCOME);
+                    const tokenDetails: any = jwt(response.data.access_token);
+                    console.log(tokenDetails);
+                    if (tokenDetails?.role === 'admin') {
+                        setLoader(false);
+                        history?.push(DASHBOARD);
+                    } else {
+                        setLoader(false);
+                        history?.push(WELCOME);
+                    }
                 }, 2000);
             }
             localStorage.setItem('token', response.data.access_token);

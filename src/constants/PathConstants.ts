@@ -24,3 +24,5 @@ export const RECORDER = '/recorder';
 
 export const THANKYOU = '/thanks';
 
+export const DASHBOARD = '/dashboard';
+
