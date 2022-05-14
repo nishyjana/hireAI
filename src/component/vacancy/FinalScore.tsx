@@ -9,11 +9,11 @@ export default function FinalScore() {
                 <div className="mt-1 text-center">Facial score</div>
             </div>
             <div className="flex flex-col">
-                <div className="font-bold text-xl">70%</div>
+                <div className="font-bold text-xl">90%</div>
                 <div>Sentiment score</div>
             </div>
             <div className="flex flex-col">
-                <div className="font-bold text-xl">70%</div>
+                <div className="font-bold text-xl">80%</div>
                 <div>Overall score</div>
             </div>
             <div className="flex flex-col">
