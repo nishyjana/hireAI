@@ -14,10 +14,12 @@ import ThankYou from './component/interview/ThankYou';
 import StartInterview from './component/interview/UploadCv';
 import Profile from './component/profile/Profile';
 import AllVacancies from './component/vacancy/AllVacancies';
+import AllVacanciesTable from './component/vacancy/AllVacanciesTable';
 import Welcome from './component/welcome/Welcome';
 import {
     ABOUT,
     ALL_VACANCY,
+    ALL_VACANCY_TABLE,
     APPLICATION_FORM,
     COMPANY_VIEW,
     DASHBOARD,
@@ -56,6 +58,8 @@ function App() {
 
                     <AdminProtectedRoutesWithLayout path={DASHBOARD} component={AdminDashBoard} />
                     <AdminProtectedRoutesWithLayout path={ALL_VACANCY} component={AllVacancies} />
+                    <AdminProtectedRoutesWithLayout path={ALL_VACANCY_TABLE} component={AllVacanciesTable} />
+                    
                     
                     
                 </Switch>
