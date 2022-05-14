@@ -80,7 +80,12 @@ const DataTable = ({
             }),
         );
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [selectedFlatRows]);
+    }, [setSelectedItems, selectedFlatRows]);
+
+    const showOptions = (item: any) => {
+        setClickedItem(item);
+        setExposeClickedItem(item);
+    };
 
     return (
         <section className="h-full ">
@@ -141,6 +146,9 @@ const DataTable = ({
                                                         }
                                                         if (cell.column.id === 'transactionId') {
                                                             setExposeClickedItem(row.original);
+                                                        }
+                                                        if (cell.column.id === 'actionColumn') {
+                                                            showOptions(row.original);
                                                         }
                                                     }}
                                                     onMouseLeave={() => {
