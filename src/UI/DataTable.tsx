@@ -126,7 +126,7 @@ const DataTable = ({
                                                     role="presentation"
                                                     key={j}
                                                     {...cell.getCellProps()}
-                                                    className={`p-3 text-gray-500   font-poppins ${
+                                                    className={`p-3 text-gray-500 bg-gray-50  font-poppins ${
                                                         cell.column.id === 'actionColumn' ||
                                                         cell.column.id === 'itemName'
                                                             ? 'text-start'
