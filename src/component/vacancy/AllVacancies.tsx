@@ -1,6 +1,9 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { ALL_VACANCY_TABLE, VACANCY_LOG } from '../../constants/PathConstants';
 
 export default function AllVacancies() {
+    const history = useHistory();
     return (
         <div className="p-20 flex flex-col w-full">
             <div className="flex justify-end my-2 mb-10">
@@ -16,8 +19,22 @@ export default function AllVacancies() {
                     bibendum.
                 </div>
                 <div className="flex justify-end my-2 mb-3 mt-10">
-                    <div className=" text-center justify-end mx-2 text-gray-600">LOG PROGRESS</div>
-                    <div className=" text-center justify-end mx-2 text-gray-600">MORE INFO</div>
+                    <div
+                        className=" text-center justify-end mx-2 text-gray-600"
+                        role="button"
+                        tabIndex={0}
+                        onClick={() => history.push(VACANCY_LOG)}
+                    >
+                        LOG PROGRESS
+                    </div>
+                    <div
+                        className=" text-center justify-end mx-2 text-gray-600"
+                        role="button"
+                        tabIndex={0}
+                        onClick={() => history.push(ALL_VACANCY_TABLE)}
+                    >
+                        MORE INFO
+                    </div>
                 </div>
             </div>
 

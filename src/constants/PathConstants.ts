@@ -30,6 +30,8 @@ export const ALL_VACANCY = '/all-vacancy';
 
 export const ALL_VACANCY_TABLE = '/all-table-vacancy';
 
+export const VACANCY_LOG = '/vacancy-log';
+
 export const DASHBOARD = '/dashboard';
 
 export const MANAGE_RECRUIT = '/manage-recruit';

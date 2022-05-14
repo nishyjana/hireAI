@@ -15,6 +15,7 @@ import StartInterview from './component/interview/UploadCv';
 import Profile from './component/profile/Profile';
 import AllVacancies from './component/vacancy/AllVacancies';
 import AllVacanciesTable from './component/vacancy/AllVacanciesTable';
+import VacancyLog from './component/vacancy/VacancyLog';
 import Welcome from './component/welcome/Welcome';
 import {
     ABOUT,
@@ -32,6 +33,7 @@ import {
     START_INTERVIEW,
     START_RECORDING,
     THANKYOU,
+    VACANCY_LOG,
     WELCOME,
 } from './constants/PathConstants';
 import AdminProtectedRoutesWithLayout from './routes/AdminRoutesWithLayout';
@@ -59,6 +61,7 @@ function App() {
                     <AdminProtectedRoutesWithLayout path={DASHBOARD} component={AdminDashBoard} />
                     <AdminProtectedRoutesWithLayout path={ALL_VACANCY} component={AllVacancies} />
                     <AdminProtectedRoutesWithLayout path={ALL_VACANCY_TABLE} component={AllVacanciesTable} />
+                    <AdminProtectedRoutesWithLayout path={VACANCY_LOG} component={VacancyLog} />
                     
                     
                     
