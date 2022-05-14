@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import ProgressBars from '../../util/ProgressBar';
 import Profile from '../profile/Profile';
+import FacialScore from './FacialScore';
 
 export default function VacancyLog() {
     const [component, setComponent] = useState('Personal Information');
@@ -50,7 +52,11 @@ export default function VacancyLog() {
                 </div>
             </div>
             <div className="m-auto flex  border-2 border-gray-200 border-b-8 rounded-b-4xl w-3/4 py-3 px-1">
-                {component === 'Personal Information' ? <Profile /> : null}
+                {component === 'Personal Information' ? (
+                    <Profile />
+                ) : component === 'Facial Score' ? (
+                    <FacialScore />
+                ) : null}
             </div>
         </div>
     );

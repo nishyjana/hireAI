@@ -9,7 +9,6 @@ import thunkMiddleware from 'redux-thunk';
 import rootReducer from './redux/rootReducer';
 import { applyMiddleware } from 'redux';
 import { legacy_createStore as createStore } from 'redux';
-
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunkMiddleware)));
 
 ReactDOM.render(
