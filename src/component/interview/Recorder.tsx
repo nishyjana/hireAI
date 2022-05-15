@@ -31,13 +31,12 @@ export default function Recorder() {
         const interviewId = localStorage.getItem('interviewId');
         const formData = new FormData();
         const date = new Date();
-        var files = new File([file], `${user}/interview/${date?.valueOf()}`, {
-            lastModified: date.valueOf(),
+
+        const myFile = new File([file], `${user}interview${date?.valueOf()}.mp4`, {
             type: 'video/mp4',
         });
-
-        if (files) {
-            formData.append('video', files);
+        if (myFile) {
+            formData.append('video', myFile);
         }
         const config = {
             headers: {
@@ -46,7 +45,6 @@ export default function Recorder() {
         };
 
         if (user && interviewId) {
-            console.log(user, interviewId);
             const response = await axios.post(
                 `http://127.0.0.1:8000/interview/apply/${interviewId}/${user}`,
                 formData,
@@ -85,6 +83,8 @@ export default function Recorder() {
         <div className="w-full h-screen mt-6">
             <VideoRecorder
                 className="mt-1"
+                countdownTime={1}
+                mimeType="video/webm;codecs=vp8,opus"
                 onRecordingComplete={(videoBlob) => {
                     setVideo(videoBlob);
                     setShowConfirm(true);
