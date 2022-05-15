@@ -10,7 +10,7 @@ export default function Recorder() {
     const [videoBlobFile, setVideoBlobFile] = useState(null);
     const [confirm, setShowConfirm] = useState(false);
     const [upload, setUpload] = useState(false);
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState(null);
     const history = useHistory();
 
     function convertBlobToFile(blob, fileName) {
@@ -23,7 +23,7 @@ export default function Recorder() {
         const blob = new Blob([video], { type: 'video/mp4' });
 
         //we are giving a url for an image as second parameter below
-        const fileTypeBLob = convertBlobToFile(blob, `${user}/interview`);
+        const fileTypeBLob = convertBlobToFile(blob, `${user?.username}`);
         setVideoBlobFile(fileTypeBLob);
     }, [user, video]);
 
@@ -32,7 +32,7 @@ export default function Recorder() {
         const formData = new FormData();
         const date = new Date();
 
-        const myFile = new File([file], `${user}interview${date?.valueOf()}.mp4`, {
+        const myFile = new File([file], `${user?.username}.mp4`, {
             type: 'video/mp4',
         });
         if (myFile) {
@@ -46,7 +46,7 @@ export default function Recorder() {
 
         if (user && interviewId) {
             const response = await axios.post(
-                `http://127.0.0.1:8000/interview/apply/${interviewId}/${user}`,
+                `http://127.0.0.1:8000/interview/apply/${interviewId}/${user?.id}`,
                 formData,
                 config,
             );
@@ -60,7 +60,7 @@ export default function Recorder() {
         const token = localStorage.getItem('token');
         if (token) {
             const tokenDetails: any = jwt(token);
-            setUser(tokenDetails?.id);
+            setUser(tokenDetails);
         }
     }, []);
 
