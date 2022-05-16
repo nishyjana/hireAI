@@ -63,7 +63,7 @@ export default function CreateVacancy() {
                     />
 
                     <InputField
-                        placeHolder="vacancy"
+                        placeHolder="Number of vacancy"
                         onChange={(e) => setVacancy(e.target.value)}
                         value={vacancy}
                     />

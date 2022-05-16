@@ -72,7 +72,7 @@ export default function VacancyLog() {
                 ) : component === 'Sentiment Score' ? (
                     <Sentiment />
                 ) : component === 'Final Score' ? (
-                    <FinalScore />
+                    <FinalScore candidateID={clickedId} interviewID={interviewID}/>
                 ) : null}
             </div>
         </div>
