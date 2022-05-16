@@ -15,6 +15,7 @@ import StartInterview from './component/interview/UploadCv';
 import Profile from './component/profile/Profile';
 import AllVacancies from './component/vacancy/AllVacancies';
 import AllVacanciesTable from './component/vacancy/AllVacanciesTable';
+import CreateVacancy from './component/vacancy/CreateVacancy';
 import ManageRecruiter from './component/vacancy/ManageRecuriters';
 import VacancyLog from './component/vacancy/VacancyLog';
 import Welcome from './component/welcome/Welcome';
@@ -24,6 +25,7 @@ import {
     ALL_VACANCY_TABLE,
     APPLICATION_FORM,
     COMPANY_VIEW,
+    CREATE_VACANCY,
     DASHBOARD,
     HELP,
     MANAGE_RECRUIT,
@@ -65,6 +67,7 @@ function App() {
                     <AdminProtectedRoutesWithLayout path={ALL_VACANCY_TABLE} component={AllVacanciesTable} />
                     <AdminProtectedRoutesWithLayout path={VACANCY_LOG} component={VacancyLog} />
                     <AdminProtectedRoutesWithLayout path={MANAGE_RECRUIT} component={ManageRecruiter} />
+                    <AdminProtectedRoutesWithLayout path={CREATE_VACANCY} component={CreateVacancy} />
                      
                     
                     

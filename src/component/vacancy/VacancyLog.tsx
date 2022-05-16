@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Profile from '../profile/Profile';
 import FacialScore from './FacialScore';
 import FinalScore from './FinalScore';
@@ -6,6 +7,9 @@ import Sentiment from './Sentiment';
 
 export default function VacancyLog() {
     const [component, setComponent] = useState('Personal Information');
+    const location = useLocation<any>()
+    const clickedId = location?.state?.clickedId;
+    console.log(clickedId,'clickedId-log')
     return (
         <div className="pt-10 flex w-full  flex-col mt-32">
             <div className="m-auto flex flex-col border-2 border-gray-200  bg-hireAI rounded-t-4xl w-3/4 px-1 py-3 ">
