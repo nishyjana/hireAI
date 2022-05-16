@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+interface Props {
+    candidateID: number;
+}
 export default function FinalScore() {
     const [finalMarks, setFinalMarks] = useState(78);
     return (

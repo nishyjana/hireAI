@@ -1,6 +1,9 @@
 import React from 'react';
 import ProgressBars from '../../util/ProgressBar';
 
+interface Props {
+    candidateID: number;
+}
 export default function FacialScore() {
     return (
         <div className=" grid grid-rows-2 grid-flow-col gap-1 p-10 m-auto ">

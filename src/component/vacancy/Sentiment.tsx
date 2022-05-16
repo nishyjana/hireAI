@@ -1,6 +1,9 @@
 import React from 'react';
 import ProgressBars from '../../util/ProgressBar';
 
+interface Props {
+    candidateID: number;
+}
 export default function Sentiment() {
     return (
         <div className=" grid grid-rows-1 grid-flow-col gap-1 p-10 m-auto ">
