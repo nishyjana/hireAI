@@ -26,6 +26,8 @@ export const THANKYOU = '/thanks';
 
 export const CREATE_VACANCY = '/create-vacancy';
 
+export const LOG_PROGRESS = '/log';
+
 export const ALL_VACANCY = '/all-vacancy';
 
 export const ALL_VACANCY_TABLE = '/all-table-vacancy';

@@ -88,7 +88,7 @@ export default function Recorder() {
         <div className="w-full h-screen mt-6">
             <VideoRecorder
                 className="mt-1"
-                countdownTime={1}
+                countdownTime={3000}
                 mimeType="video/webm;codecs=vp8,opus"
                 onRecordingComplete={(videoBlob) => {
                     setVideo(videoBlob);

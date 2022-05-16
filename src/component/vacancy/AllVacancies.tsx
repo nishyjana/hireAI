@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { ALL_VACANCY_TABLE, VACANCY_LOG } from '../../constants/PathConstants';
+import { ALL_VACANCY_TABLE, LOG_PROGRESS, VACANCY_LOG } from '../../constants/PathConstants';
 import Loader from '../../util/Loader';
 
 export default function AllVacancies() {
@@ -43,7 +43,7 @@ export default function AllVacancies() {
                                 className=" text-center justify-end mx-2 text-gray-600"
                                 role="button"
                                 tabIndex={0}
-                                onClick={() => history.push({pathname:VACANCY_LOG,state:{interviewId: vacancy?._id}})}
+                                onClick={() => history.push({pathname:LOG_PROGRESS,state:{interviewId: vacancy?._id}})}
                             >
                                 LOG PROGRESS
                             </div>

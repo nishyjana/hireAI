@@ -16,6 +16,7 @@ import Profile from './component/profile/Profile';
 import AllVacancies from './component/vacancy/AllVacancies';
 import AllVacanciesTable from './component/vacancy/AllVacanciesTable';
 import CreateVacancy from './component/vacancy/CreateVacancy';
+import LogProgress from './component/vacancy/LogProgress';
 import ManageRecruiter from './component/vacancy/ManageRecuriters';
 import VacancyLog from './component/vacancy/VacancyLog';
 import Welcome from './component/welcome/Welcome';
@@ -28,6 +29,7 @@ import {
     CREATE_VACANCY,
     DASHBOARD,
     HELP,
+    LOG_PROGRESS,
     MANAGE_RECRUIT,
     PROFILE,
     QUESTION,
@@ -68,7 +70,8 @@ function App() {
                     <AdminProtectedRoutesWithLayout path={VACANCY_LOG} component={VacancyLog} />
                     <AdminProtectedRoutesWithLayout path={MANAGE_RECRUIT} component={ManageRecruiter} />
                     <AdminProtectedRoutesWithLayout path={CREATE_VACANCY} component={CreateVacancy} />
-                     
+                    <AdminProtectedRoutesWithLayout path={LOG_PROGRESS} component={LogProgress} />
+                    
                     
                     
                 </Switch>
