@@ -116,10 +116,11 @@ export default function AllVacanciesTable() {
                 pathname: VACANCY_LOG,
                 state: {
                     clickedId: clickedCategory?._id,
+                    interviewId: interviewID,
                 },
             });
         }
-    }, [clickedView, clickedCategory, history]);
+    }, [clickedView, clickedCategory, history,interviewID]);
 
     return (
         <div className="flex flex-col m-auto py-32 px-10 w-full">
