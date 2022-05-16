@@ -1,4 +1,28 @@
-export default function Profile() {
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import Loader from '../../util/Loader';
+
+interface Props {
+    candidateID: number;
+}
+export default function Profile({ candidateID }: Props) {
+    const [candidate, setCandidate] = useState(null);
+    const [loader, setLoader] = useState(true);
+    const GetAllCandidates = async () => {
+        try {
+            const response = await axios.get(`http://127.0.0.1:8000/candidate/${candidateID}`);
+            if (response) {
+                setLoader(false);
+                setCandidate(response?.data);
+            }
+        } catch (error: any) {
+            console.log(error);
+        }
+    };
+
+    useEffect(() => {
+        GetAllCandidates();
+    });
     return (
         <>
             <div className="w-1/3  flex">
@@ -10,41 +34,46 @@ export default function Profile() {
                     />
                 </div>
             </div>
+            {loader ? (
+                <div className="m-auto">
+                    <Loader />
+                </div>
+            ) : (
+                <div className="w-2/3 flex justify-evenly py-10">
+                    <div className="flex flex-col 3xl:-ml-44">
+                        <div className="mb-3">
+                            <div className="mb-1">FIRST NAME</div>
+                            <div className="mb-3 font-medium">{candidate?.firstname}</div>
+                        </div>
 
-            <div className="w-2/3 flex justify-evenly py-10">
-                <div className="flex flex-col 3xl:-ml-44">
-                    <div className="mb-3">
-                        <div className="mb-1">FIRST NAME</div>
-                        <div className="mb-3 font-medium">Lorem Ipsum</div>
+                        <div className="mb-3">
+                            <div className="mb-1">EMAIL</div>
+                            <div className="mb-3 font-medium">{candidate?.email}</div>
+                        </div>
+
+                        <div className="mb-3">
+                            <div className="mb-1">UNIVERSITY</div>
+                            <div className="mb-3 font-medium">{candidate?.university}</div>
+                        </div>
                     </div>
+                    <div className="flex flex-col">
+                        <div className="mb-3">
+                            <div className="mb-1">LAST NAME</div>
+                            <div className="mb-3 font-medium">{candidate?.lastname}</div>
+                        </div>
 
-                    <div className="mb-3">
-                        <div className="mb-1">EMAIL</div>
-                        <div className="mb-3 font-medium">example@example.com</div>
-                    </div>
+                        <div className="mb-3">
+                            <div className="mb-1">CONTACT</div>
+                            <div className="mb-3 font-medium">{candidate?.contact_number}</div>
+                        </div>
 
-                    <div className="mb-3">
-                        <div className="mb-1">UNIVERSITY</div>
-                        <div className="mb-3 font-medium">Informatics Institute of Technology</div>
+                        <div className="mb-3">
+                            <div className="mb-1">DEGREE PROGRAM</div>
+                            <div className="mb-3 font-medium">{candidate?.degree_programme}</div>
+                        </div>
                     </div>
                 </div>
-                <div className="flex flex-col">
-                    <div className="mb-3">
-                        <div className="mb-1">LAST NAME</div>
-                        <div className="mb-3 font-medium">Lorem Ipsum</div>
-                    </div>
-
-                    <div className="mb-3">
-                        <div className="mb-1">CONTACT</div>
-                        <div className="mb-3 font-medium">+9477090909</div>
-                    </div>
-
-                    <div className="mb-3">
-                        <div className="mb-1">DEGREE PROGRAM</div>
-                        <div className="mb-3 font-medium">Software Engineering</div>
-                    </div>
-                </div>
-            </div>
+            )}
         </>
     );
 }

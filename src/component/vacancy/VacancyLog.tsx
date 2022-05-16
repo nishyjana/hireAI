@@ -9,7 +9,6 @@ export default function VacancyLog() {
     const [component, setComponent] = useState('Personal Information');
     const location = useLocation<any>()
     const clickedId = location?.state?.clickedId;
-    console.log(clickedId,'clickedId-log')
     return (
         <div className="pt-10 flex w-full  flex-col mt-32">
             <div className="m-auto flex flex-col border-2 border-gray-200  bg-hireAI rounded-t-4xl w-3/4 px-1 py-3 ">
@@ -66,7 +65,7 @@ export default function VacancyLog() {
             </div>
             <div className="m-auto flex  border-2 border-gray-200 border-b-8 rounded-b-4xl w-3/4 py-3 px-1">
                 {component === 'Personal Information' ? (
-                    <Profile />
+                    <Profile candidateID={clickedId} />
                 ) : component === 'Facial Score' ? (
                     <FacialScore />
                 ) : component === 'Sentiment Score' ? (
