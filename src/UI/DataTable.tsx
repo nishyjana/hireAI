@@ -141,6 +141,8 @@ const DataTable = ({
                                                             : null
                                                     }`}
                                                     onClick={() => {
+                                                        setExposeClickedItem(row.original);
+                                                        showOptions(row.original);
                                                         if (cell.column.id === 'expander') {
                                                             setSelectedItem(row.original);
                                                         }
