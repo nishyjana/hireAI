@@ -42,33 +42,33 @@ export default function Profile({ candidateID }: Props) {
                 <div className="w-2/3 flex justify-evenly py-10">
                     <div className="flex flex-col 3xl:-ml-44">
                         <div className="mb-3">
-                            <div className="mb-1">FIRST NAME</div>
+                            <div className="mb-1 text-gray-400">FIRST NAME</div>
                             <div className="mb-3 font-medium">{candidate?.firstname}</div>
                         </div>
 
                         <div className="mb-3">
-                            <div className="mb-1">EMAIL</div>
+                            <div className="mb-1 text-gray-400">EMAIL</div>
                             <div className="mb-3 font-medium">{candidate?.email}</div>
                         </div>
 
                         <div className="mb-3">
-                            <div className="mb-1">UNIVERSITY</div>
+                            <div className="mb-1 text-gray-400">UNIVERSITY</div>
                             <div className="mb-3 font-medium">{candidate?.university}</div>
                         </div>
                     </div>
                     <div className="flex flex-col">
                         <div className="mb-3">
-                            <div className="mb-1">LAST NAME</div>
+                            <div className="mb-1 text-gray-400">LAST NAME</div>
                             <div className="mb-3 font-medium">{candidate?.lastname}</div>
                         </div>
 
                         <div className="mb-3">
-                            <div className="mb-1">CONTACT</div>
+                            <div className="mb-1 text-gray-400">CONTACT</div>
                             <div className="mb-3 font-medium">{candidate?.contact_number}</div>
                         </div>
 
                         <div className="mb-3">
-                            <div className="mb-1">DEGREE PROGRAM</div>
+                            <div className="mb-1 text-gray-400">DEGREE PROGRAM</div>
                             <div className="mb-3 font-medium">{candidate?.degree_programme}</div>
                         </div>
                     </div>
