@@ -4,6 +4,7 @@ import * as BsIcons from 'react-icons/bs';
 import { VACANCY_LOG, WELCOME } from '../../constants/PathConstants';
 import { useHistory, useLocation } from 'react-router-dom';
 import axios from 'axios';
+import Loader from '../../util/Loader';
 
 export default function AllVacanciesTable() {
     const [clickedCategory, setClickedCategory] = useState(null);
@@ -13,6 +14,7 @@ export default function AllVacanciesTable() {
     const [candidates, setCandidates] = useState([]);
     const interviewID = location?.state?.interviewId;
     const [vacancy, setVacancy] = useState(null);
+    const [loader, setLoader] = useState(true);
 
     const GetAllCandidates = async () => {
         try {
@@ -20,6 +22,7 @@ export default function AllVacanciesTable() {
                 `http://127.0.0.1:8000/candidate/appliedCandidates/${interviewID}`,
             );
             if (response?.data) {
+                setLoader(false);
                 setCandidates(response?.data);
             }
         } catch (error: any) {
@@ -29,7 +32,7 @@ export default function AllVacanciesTable() {
 
     useEffect(() => {
         GetAllCandidates();
-    });
+    },[candidates]);
 
     const GetVacancy = async () => {
         try {
@@ -44,7 +47,7 @@ export default function AllVacanciesTable() {
 
     useEffect(() => {
         GetVacancy();
-    });
+    }, [vacancy]);
 
     const columns = React.useMemo(
         () => [
@@ -125,11 +128,15 @@ export default function AllVacanciesTable() {
                 <div className="font-medium">Deadline: 23rd August 2022</div>
             </div>
             <div className="p-3 border-2 rounded-4xl border-gray-200 w-full">
-                <DataTable
-                    columns={columns}
-                    data={candidates}
-                    setExposeClickedItem={setClickedCategory}
-                />
+                {loader ? (
+                   <div className='m-auto'><Loader/></div> 
+                ) : (
+                    <DataTable
+                        columns={columns}
+                        data={candidates}
+                        setExposeClickedItem={setClickedCategory}
+                    />
+                )}
             </div>
         </div>
     );

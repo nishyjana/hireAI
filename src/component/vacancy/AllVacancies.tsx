@@ -22,7 +22,7 @@ export default function AllVacancies() {
 
     useEffect(() => {
         GetAllVacancy();
-    });
+    },[vacancies]);
     return (
         <div className="p-20 flex flex-col w-full">
             <div className="flex justify-end my-2 mb-10">
