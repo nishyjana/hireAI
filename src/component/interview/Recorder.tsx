@@ -4,6 +4,7 @@ import jwt from 'jwt-decode';
 import axios from 'axios';
 import { THANKYOU, WELCOME } from '../../constants/PathConstants';
 import { useHistory } from 'react-router-dom';
+import NormalLoader from '../../ui/NormalLoader';
 
 export default function Recorder() {
     const [video, setVideo] = useState(null);
@@ -11,6 +12,7 @@ export default function Recorder() {
     const [confirm, setShowConfirm] = useState(false);
     const [upload, setUpload] = useState(false);
     const [user, setUser] = useState(null);
+    const [loader, setLoader] = useState(false);
     const history = useHistory();
 
     function convertBlobToFile(blob, fileName) {
@@ -51,7 +53,10 @@ export default function Recorder() {
                 config,
             );
             if (response) {
-                history.push(THANKYOU);
+                setLoader(false);
+                setTimeout(() => {
+                    history.push(THANKYOU);
+                }, 1000);
             }
         }
     };
@@ -97,9 +102,10 @@ export default function Recorder() {
                         className="bg-hireAI rounded-3xl w-1/12 my-2 text-center px-9 flex m-auto p-2 text-sm text-white"
                         onClick={() => {
                             setUpload(true);
+                            setLoader(true);
                         }}
                     >
-                        Upload
+                        {loader ? <NormalLoader /> : 'Upload'}
                     </button>
                 </div>
             ) : null}
