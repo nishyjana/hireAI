@@ -13,6 +13,7 @@ import StartRecording from './component/interview/StartRecording';
 import ThankYou from './component/interview/ThankYou';
 import StartInterview from './component/interview/UploadCv';
 import Profile from './component/profile/Profile';
+import UserProfile from './component/profile/UserProfile';
 import AllVacancies from './component/vacancy/AllVacancies';
 import AllVacanciesTable from './component/vacancy/AllVacanciesTable';
 import CreateVacancy from './component/vacancy/CreateVacancy';
@@ -39,6 +40,7 @@ import {
     START_INTERVIEW,
     START_RECORDING,
     THANKYOU,
+    USER_PROFILE,
     VACANCY_LOG,
     WELCOME,
 } from './constants/PathConstants';
@@ -63,6 +65,7 @@ function App() {
                     <ProtectedRoutesWithLayout path={QUESTION} component={Question} />
                     <ProtectedRoutesWithLayout path={RECORDER} component={Recorder} />
                     <ProtectedRoutesWithLayout path={THANKYOU} component={ThankYou} />
+                    <ProtectedRoutesWithLayout path={USER_PROFILE} component={UserProfile} />
 
                     <AdminProtectedRoutesWithLayout path={DASHBOARD} component={AdminDashBoard} />
                     <AdminProtectedRoutesWithLayout path={ALL_VACANCY} component={AllVacancies} />
@@ -71,6 +74,7 @@ function App() {
                     <AdminProtectedRoutesWithLayout path={MANAGE_RECRUIT} component={ManageRecruiter} />
                     <AdminProtectedRoutesWithLayout path={CREATE_VACANCY} component={CreateVacancy} />
                     <AdminProtectedRoutesWithLayout path={LOG_PROGRESS} component={LogProgress} />
+                    
                     
                     
                     

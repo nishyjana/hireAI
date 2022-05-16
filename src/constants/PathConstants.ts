@@ -37,3 +37,5 @@ export const VACANCY_LOG = '/vacancy-log';
 export const DASHBOARD = '/dashboard';
 
 export const MANAGE_RECRUIT = '/manage-recruit';
+
+export const USER_PROFILE = '/user-profile'
