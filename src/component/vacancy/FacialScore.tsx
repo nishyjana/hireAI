@@ -35,9 +35,11 @@ export default function FacialScore({ candidateID, interviewID }: Props) {
         GetAllCandidates();
     }, [candidate]);
     return (
-        <div className=" grid grid-rows-2 grid-flow-col gap-1 p-10 m-auto ">
+        <div className=" grid grid-cols-3 grid-rows-3 grid-flow-row gap-4  p-10 m-auto ">
             {loader ? (
-                 <div className='m-auto'><Loader/></div> 
+                <div className="m-auto">
+                    <Loader />
+                </div>
             ) : (
                 <>
                     <div className="flex  flex-col my-6">
@@ -74,6 +76,16 @@ export default function FacialScore({ candidateID, interviewID }: Props) {
                         <div className="font-bold"> Fear </div>
                         <div className="mx-20">
                             <ProgressBars percentage={interview?.scores?.facial_scores?.fear} />
+                        </div>
+                    </div>
+                    <div className="flex  flex-col my-6">
+                        <div className="font-bold"> </div>
+                        <div className="mx-20"></div>
+                    </div>
+                    <div className="flex  flex-col my-6">
+                        <div className="font-bold"> Calm </div>
+                        <div className="mx-20">
+                            <ProgressBars percentage={interview?.scores?.facial_scores?.neutral} />
                         </div>
                     </div>
                 </>
