@@ -8,7 +8,7 @@ interface Props {
 
 export default function InputSearch({ onclick, setUrl, setComplete }: Props) {
     return (
-        <div className="flex py-2 px-2 w-1/3 rounded-3xl border-2 border-double hover:border-gray-200 border-gray-100">
+        <div className="flex py-2 px-2 w-1/3 rounded-3xl border-2 border-double hover:border-gray-200 border-gray-300">
             <input
                 className="p-1 w-full outline-none"
                 placeholder="Insert link here"
