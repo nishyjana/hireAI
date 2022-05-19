@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import DataTable from '../../ui/DataTable';
+import DataTable from '../../userInterface/DataTable';
 import * as BsIcons from 'react-icons/bs';
 
 export default function ManageRecruiter() {

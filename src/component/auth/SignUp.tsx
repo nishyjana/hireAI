@@ -2,8 +2,8 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { SIGNIN } from '../../constants/PathConstants';
-import { InputField } from '../../ui/InputField';
-import NormalLoader from '../../ui/NormalLoader';
+import { InputField } from '../../userInterface/InputField';
+import NormalLoader from '../../userInterface/NormalLoader';
 
 export default function SignUp() {
     const history = useHistory();
@@ -62,12 +62,21 @@ export default function SignUp() {
     return (
         <div className="flex p-40">
             <div className="w-1/2 border-2 border-b-4 border-gray-100 m-auto flex flex-col rounded-xl">
-            <img src="images\whitelogo.svg" className=" mx-auto w-48 h-10 mt-2 mb-20" alt="" />
+                <img src="images\whitelogo.svg" className=" mx-auto w-48 h-10 mt-2 mb-20" alt="" />
                 <div className="z-30 p-10 grid grid-rows-4 grid-flow-col gap-1">
-                    <InputField placeHolder="First name" onChange={(e) => setFirstName(e.target.value)} />
+                    <InputField
+                        placeHolder="First name"
+                        onChange={(e) => setFirstName(e.target.value)}
+                    />
                     <InputField placeHolder="Email" onChange={(e) => setEmail(e.target.value)} />
-                    <InputField placeHolder="University" onChange={(e) => setUniversity(e.target.value)} />
-                    <InputField placeHolder="Last name" onChange={(e) => setLastName(e.target.value)} />
+                    <InputField
+                        placeHolder="University"
+                        onChange={(e) => setUniversity(e.target.value)}
+                    />
+                    <InputField
+                        placeHolder="Last name"
+                        onChange={(e) => setLastName(e.target.value)}
+                    />
                     <InputField
                         placeHolder="Contact number"
                         onChange={(e) => setContactNumber(e.target.value)}

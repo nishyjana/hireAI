@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import DataTable from '../../ui/DataTable';
+import DataTable from '../../userInterface/DataTable';
 import * as BsIcons from 'react-icons/bs';
 import { VACANCY_LOG, WELCOME } from '../../constants/PathConstants';
 import { useHistory, useLocation } from 'react-router-dom';

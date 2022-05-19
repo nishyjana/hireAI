@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Sidebar from '../ui/Sidebar';
+import Sidebar from '../userInterface/Sidebar';
 
 const ScreensWithNavAndSideBar = ({ children }) => (
     <>
@@ -10,13 +10,12 @@ const ScreensWithNavAndSideBar = ({ children }) => (
                     <div className="fixed w-1/3 xl:w-1/5">
                         <Sidebar />
                     </div>
-                    
                 </div>
                 <div className="flex w-2/3 xl:w-3/4">
-                        <div className="pl-4 flex w-full">
-                            <div className="pt-4 w-full">{children}</div>
-                        </div>
+                    <div className="pl-4 flex w-full">
+                        <div className="pt-4 w-full">{children}</div>
                     </div>
+                </div>
             </div>
         </div>
     </>

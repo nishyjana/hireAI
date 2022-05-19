@@ -3,8 +3,8 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { DASHBOARD, SIGNUP, WELCOME } from '../../constants/PathConstants';
-import { InputField } from '../../ui/InputField';
-import NormalLoader from '../../ui/NormalLoader';
+import { InputField } from '../../userInterface/InputField';
+import NormalLoader from '../../userInterface/NormalLoader';
 import jwt from 'jwt-decode';
 
 export default function LogIn() {

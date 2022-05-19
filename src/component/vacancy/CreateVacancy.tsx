@@ -2,26 +2,20 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { ALL_VACANCY } from '../../constants/PathConstants';
-import { InputField } from '../../ui/InputField';
-import NormalLoader from '../../ui/NormalLoader';
+import { InputField } from '../../userInterface/InputField';
+import NormalLoader from '../../userInterface/NormalLoader';
 
 export default function CreateVacancy() {
     const [loader, setLoader] = useState(false);
-    
+
     const [designation, setDesignation] = useState('');
     const [vacancy, setVacancy] = useState('');
     const [companyName, setCompanyName] = useState('');
     const [description, setDescription] = useState('');
 
-    const history = useHistory()
+    const history = useHistory();
 
-    
-    const VacancyCreate = async (
-        designation,
-        vacancy,
-        companyName,
-        description,
-    ) => {
+    const VacancyCreate = async (designation, vacancy, companyName, description) => {
         const config = {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -33,19 +27,15 @@ export default function CreateVacancy() {
         params.append('vacancy', vacancy);
         params.append('company_name', companyName);
         params.append('description', description);
-        
+
         try {
-            const response = await axios.post(
-                `http://127.0.0.1:8000/interview`,
-                params,
-                config,
-            );
+            const response = await axios.post(`http://127.0.0.1:8000/interview`, params, config);
             if (response?.data) {
                 setLoader(false);
-               
-                setTimeout(()=>{
-                    history.push(ALL_VACANCY)
-                })
+
+                setTimeout(() => {
+                    history.push(ALL_VACANCY);
+                });
             }
         } catch (error: any) {
             console.log(error);
@@ -77,20 +67,13 @@ export default function CreateVacancy() {
                         onChange={(e) => setDescription(e.target.value)}
                         value={description}
                     />
-                    <InputField
-                        placeHolder="Enter your question"
-                    />
+                    <InputField placeHolder="Enter your question" />
                 </div>
                 <button
                     className="mt-3 w-1/2 m-auto my-10 bg-hireAI text-white py-3 rounded-3xl"
                     onClick={() => {
                         setLoader(true);
-                        VacancyCreate(
-                            designation,
-                            vacancy,
-                            companyName,
-                            description,
-                        );
+                        VacancyCreate(designation, vacancy, companyName, description);
                     }}
                 >
                     {loader ? <NormalLoader /> : 'Create vacancy'}

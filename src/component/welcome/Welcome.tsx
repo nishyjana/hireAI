@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { ABOUT, COMPANY_VIEW, SIGNIN } from '../../constants/PathConstants';
-import InputSearch from '../../ui/InputSearch';
+import InputSearch from '../../userInterface/InputSearch';
 
 export default function Welcome() {
     const history = useHistory();

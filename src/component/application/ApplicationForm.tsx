@@ -3,8 +3,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import jwt from 'jwt-decode';
-import { InputField } from '../../ui/InputField';
-import NormalLoader from '../../ui/NormalLoader';
+import { InputField } from '../../userInterface/InputField';
+import NormalLoader from '../../userInterface/NormalLoader';
 import { START_INTERVIEW } from '../../constants/PathConstants';
 
 export default function ApplicationForm() {
@@ -82,9 +82,9 @@ export default function ApplicationForm() {
             );
             if (response?.data) {
                 setLoader(false);
-                setTimeout(()=>{
-                    history.push(START_INTERVIEW)
-                })
+                setTimeout(() => {
+                    history.push(START_INTERVIEW);
+                });
             }
         } catch (error: any) {
             console.log(error);

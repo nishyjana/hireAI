@@ -4,7 +4,7 @@ import jwt from 'jwt-decode';
 import axios from 'axios';
 import { THANKYOU, WELCOME } from '../../constants/PathConstants';
 import { useHistory } from 'react-router-dom';
-import NormalLoader from '../../ui/NormalLoader';
+import NormalLoader from '../../userInterface/NormalLoader';
 
 export default function Recorder() {
     const [video, setVideo] = useState(null);

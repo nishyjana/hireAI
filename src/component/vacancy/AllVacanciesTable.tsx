@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import DataTable from '../../ui/DataTable';
+import DataTable from '../../userInterface/DataTable';
 import * as BsIcons from 'react-icons/bs';
 import { VACANCY_LOG, WELCOME } from '../../constants/PathConstants';
 import { useHistory, useLocation } from 'react-router-dom';
@@ -32,7 +32,7 @@ export default function AllVacanciesTable() {
 
     useEffect(() => {
         GetAllCandidates();
-    },[candidates]);
+    }, [candidates]);
 
     const GetVacancy = async () => {
         try {
@@ -120,7 +120,7 @@ export default function AllVacanciesTable() {
                 },
             });
         }
-    }, [clickedView, clickedCategory, history,interviewID]);
+    }, [clickedView, clickedCategory, history, interviewID]);
 
     return (
         <div className="flex flex-col m-auto py-32 px-10 w-full">
@@ -130,7 +130,9 @@ export default function AllVacanciesTable() {
             </div>
             <div className="p-3 border-2 rounded-4xl border-gray-200 w-full">
                 {loader ? (
-                   <div className='m-auto'><Loader/></div> 
+                    <div className="m-auto">
+                        <Loader />
+                    </div>
                 ) : (
                     <DataTable
                         columns={columns}

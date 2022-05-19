@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import NavBar from '../ui/NavBar';
+import NavBar from '../userInterface/NavBar';
 
 const ScreensWithNavAndSideBar = ({ children }) => (
     <>
