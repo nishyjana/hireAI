@@ -55,7 +55,7 @@ export default function CreateVacancy() {
         <div className="w-full flex">
             <div className="m-auto mt-20 border-2 rounded-4xl border-gray-200 flex flex-col  border-b-8 w-1/2">
                 <div className="m-auto text-lg">Vacancy Form</div>
-                <div className="z-30 p-10 grid grid-rows-4 grid-flow-col gap-1">
+                <div className="z-30 p-10 grid grid-rows-5 grid-flow-col gap-1">
                     <InputField
                         placeHolder="Designation"
                         onChange={(e) => setDesignation(e?.target.value)}
@@ -76,6 +76,9 @@ export default function CreateVacancy() {
                         placeHolder="Description"
                         onChange={(e) => setDescription(e.target.value)}
                         value={description}
+                    />
+                    <InputField
+                        placeHolder="Enter your question"
                     />
                 </div>
                 <button

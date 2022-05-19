@@ -14,8 +14,8 @@ export default function SideBarElements() {
         <div className="pt-20">
             <img src="images\logo.svg" className="w-auto m-16 -mt-10 mb-20" alt="" />
             <div
-                className={`mb-3 py-2 mt-7 hover:bg-gray-400 w-full ${
-                    pathSelected === DASHBOARD ? null : null
+                className={`mb-3 py-2 mt-7 hover:bg-gray-600 w-full ${
+                    pathSelected === DASHBOARD ? 'bg-gray-600 opacity-100' : null
                 }`}
                 role="button"
                 tabIndex={0}
@@ -29,7 +29,7 @@ export default function SideBarElements() {
                 </div>
             </div>
 
-            <div className={`mb-3 py-2 mt-7  w-full ${pathSelected === DASHBOARD ? null : null}`}>
+            <div className={`mb-3 py-2 mt-7  w-full `}>
                 <div className="flex flex-row  h-10 mx-6 pt-2">
                     <img src="images\vacancy.svg" className="w-10" alt="" />
 
@@ -40,7 +40,9 @@ export default function SideBarElements() {
             <div
                 role="button"
                 tabIndex={0}
-                className={`flex flex-row h-10 hover:bg-gray-400 pt-2 hover:bg-transparent`}
+                className={`flex flex-row h-10 hover:bg-gray-600 hover:opacity-100 pt-2 ${
+                    pathSelected === CREATE_VACANCY ? 'bg-gray-600 opacity-100' : null
+                }`}
                 onClick={() => {
                     onclickFunction(CREATE_VACANCY);
                 }}
@@ -52,7 +54,9 @@ export default function SideBarElements() {
             <div
                 role="button"
                 tabIndex={0}
-                className={`flex flex-row mt-4 h-10 hover:bg-gray-400 pt-2 hover:bg-transparent`}
+                className={`flex flex-row mt-4 h-10 hover:bg-gray-600 hover:opacity-100 pt-2 ${
+                    pathSelected === ALL_VACANCY ? 'bg-gray-600 opacity-100' : null
+                }`}
                 onClick={() => {
                     onclickFunction(ALL_VACANCY);
                 }}
@@ -62,8 +66,8 @@ export default function SideBarElements() {
             </div>
 
             <div
-                className={`mb-3 py-2 mt-3 hover:bg-gray-400 w-full ${
-                    pathSelected === MANAGE_RECRUIT ? null : null
+                className={`mb-3 py-2 mt-3 hover:bg-gray-600  hover:opacity-100 w-full ${
+                    pathSelected === MANAGE_RECRUIT ? 'bg-gray-600 opacity-100' : null
                 }`}
                 role="button"
                 tabIndex={0}
