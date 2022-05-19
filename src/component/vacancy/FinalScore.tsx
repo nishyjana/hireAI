@@ -33,7 +33,7 @@ export default function FinalScore({ candidateID, interviewID }: Props) {
 
     useEffect(() => {
         GetAllCandidates();
-    }, [candidate]);
+    }, []);
     return (
         <div className="flex justify-between w-full px-10 py-32">
             {loader ? (
