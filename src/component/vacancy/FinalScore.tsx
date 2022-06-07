@@ -41,15 +41,15 @@ export default function FinalScore({ candidateID, interviewID }: Props) {
             ) : (
                 <>
                     <div className="flex flex-col">
-                        <div className="font-bold text-xl">70%</div>
-                        <div className="mt-1 text-center">Facial score</div>
+                        <div className="font-bold text-xl">{interview?.scores?.facial_scores?.pos_neg}%</div>
+                        <div className="mt-1 text-center">Facial Score</div>
                     </div>
                     <div className="flex flex-col">
-                        <div className="font-bold text-xl">90%</div>
+                        <div className="font-bold text-xl">{interview?.scores?.sentimental_scores?.pos_neg}%</div>
                         <div>Sentiment score</div>
                     </div>
                     <div className="flex flex-col">
-                        <div className="font-bold text-xl">80%</div>
+                        <div className="font-bold text-xl">{interview?.scores?.overall_score}%</div>
                         <div>Overall score</div>
                     </div>
                     <div className="flex flex-col">
