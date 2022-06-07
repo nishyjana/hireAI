@@ -51,6 +51,7 @@ export default function SignUp() {
             if (response) {
                 setTimeout(() => {
                     setLoader(false);
+                    alert('You are successfully Registered, please login')
                     history?.push(SIGNIN);
                 }, 2000);
             }
