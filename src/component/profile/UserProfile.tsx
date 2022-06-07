@@ -47,7 +47,7 @@ export default function UserProfile() {
                     <img
                         className="w-44 h-44 object-cover rounded-full"
                         alt=""
-                        src="https://expertphotography.b-cdn.net/wp-content/uploads/2018/10/cool-profile-pictures-retouching-1.jpg"
+                        src="images/thivyan.png"
                     />
                     <div className="flex my-2 mb-10 w-full">
                         <button
