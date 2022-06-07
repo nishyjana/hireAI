@@ -70,7 +70,7 @@ export default function VacancyLog() {
                 ) : component === 'Facial Score' ? (
                     <FacialScore candidateID={clickedId} interviewID={interviewID} />
                 ) : component === 'Sentiment Score' ? (
-                    <Sentiment />
+                    <Sentiment candidateID={clickedId} interviewID={interviewID} />
                 ) : component === 'Final Score' ? (
                     <FinalScore candidateID={clickedId} interviewID={interviewID}/>
                 ) : null}
